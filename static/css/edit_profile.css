@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.profile-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    color: #444;
+}
+
+.profile-field {
+    margin-bottom: 20px; /* Отступ между полями */
+}
+
+.profile-field label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px; /* Отступ снизу у label */
+    font-size: 16px; /* Устанавливаем размер шрифта */
+}
+
+.profile-field input {
+    width: 100%;
+    padding: 5px; /* Увеличение внутреннего отступа для увеличения высоты */
+    font-size: 5px; /* Увеличение размера шрифта */
+    margin-top: 5px; /* Отступ сверху, чтобы поле было ниже названия */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button, .delete-button {
+    width: 100%;
+    padding: 10px; /* Сделать кнопки выше */
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    box-sizing: border-box;
+    font-size: 18px; /* Увеличить текст кнопок */
+}
+
+.save-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+}
+
+.save-button:hover {
+    background-color: #218838;
+}
+
+.delete-button {
+    background-color: #ff5733;
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+}
+
+.delete-button:hover {
+    background-color: #b71c1c;
+}
+
+#message {
+    text-align: center;
+    margin-top: 10px;
+    color: red;
+}

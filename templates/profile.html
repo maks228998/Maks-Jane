@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Профиль</h1>
+        <div class="profile-card">
+            <h2>Информация о профиле</h2>
+            <div class="profile">
+                <p>Логин: {{ profile['profile_login'] }}</p>
+                <p>Имя: {{ profile['profile_first_name'] }}</p>
+                <p>Фамилия: {{ profile['profile_name'] }}</p>
+                <p>Отчество: {{ profile['profile_second_name'] }}</p>
+                <p>Номер телефона: {{ profile['profile_phone'] }}</p>
+                <p>Электронная почта: {{ profile['profile_email'] }}</p>
+            </div>
+            <a href="{{ url_for('edit_profile') }}" class="edit-button">Редактировать профиль</a>
+            <a href="{{ url_for('logout') }}" class="logout-button">Выйти из профиля</a>
+            <a href="{{ url_for('delete_profile') }}" class="delete-button">Удалить профиль</a>
+        </div>
+    </div>
+</body>
+</html>

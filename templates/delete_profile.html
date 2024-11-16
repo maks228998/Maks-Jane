@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Удалить профиль</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/delete_profile.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Введите логин и пароль для подтверждения удаления профиля</h2>
+        <form id="login-form">
+            <label for="login">Логин:</label>
+            <input type="text" id="login" name="login" required><br>
+
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required><br>
+
+            <button type="submit" id="delete-button">Удалить</button>
+        </form>
+
+        <p id="message"></p>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/delete_profile.js') }}"></script>
+</body>
+</html>

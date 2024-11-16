@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактировать профиль</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Редактировать профиль</h1>
+        <div class="profile-card">
+            <h2>Информация о профиле</h2>
+            <form class="profile-form" method="POST" action="/edit_profile">
+                <div class="profile-field">
+                    <label for="login">Логин:</label>
+                </div>
+                <div class="profile-field">
+                    <input type="text" id="login" name="login" value="{{ profile['profile_login'] }}" required>
+                </div>
+                <div class="profile-field">
+                    <label for="first_name">Фамилия:</label>
+                <div>
+                    <input type="text" id="first_name" name="first_name" value="{{ profile['profile_first_name'] }}" required>
+                </div>
+                </div>
+                <div class="profile-field">
+                    <label for="name">Имя:</label>
+                </div>
+                <div>
+                    <input type="text" id="name" name="name" value="{{ profile['profile_name'] }}" required>
+                </div>
+                <div class="profile-field">
+                    <label for="second_name">Отчество:</label>
+                </div>
+                <div>
+                    <input type="text" id="second_name" name="second_name" value="{{ profile['profile_second_name'] }}" required>
+                </div>
+                <div class="profile-field">
+                    <label for="phone">Номер телефона:</label>
+                </div>
+                <div>
+                    <input type="text" id="phone" name="phone" value="{{ profile['profile_phone'] }}" required>
+                </div>
+                <div class="profile-field">
+                    <label for="email">Электронная почта:</label>
+                </div>
+                <div>
+                    <input type="email" id="email" name="email" value="{{ profile['profile_email'] }}" required>
+                </div>
+                    <button type="submit" class="edit-button">Сохранить</button>
+                    <a href="{{ url_for('profile') }}" class="delete-button">Отмена</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

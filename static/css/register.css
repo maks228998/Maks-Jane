@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.register-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Размер контейнера */
+}
+
+h2 {
+    text-align: center;
+}
+
+label {
+    margin-top: 0px;
+    display: block;
+}
+
+input {
+    width: 100%; /* Поля ввода занимают всю ширину контейнера */
+    padding: 10px; /* Отступы внутри поля ввода */
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Учитываем отступы и границы */
+}
+
+button {
+    width: 100%; /* Кнопки занимают всю ширину контейнера */
+    padding: 10px; /* Отступы внутри кнопки, чтобы кнопка была такой же толщины, как и поля */
+    margin-top: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-sizing: border-box; /* Учитываем отступы и границы */
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#message {
+    text-align: center;
+    margin-top: 10px;
+    color: red;
+}

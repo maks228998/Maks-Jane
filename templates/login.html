@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Авторизация</h2>
+        <form id="login-form">
+            <label for="login">Логин:</label>
+            <input type="text" id="login" name="login" required><br>
+
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required><br>
+
+            <button type="submit" id="login-button">Войти</button>
+        </form>
+
+        <div class="register-container">
+            <p>Нет аккаунта?</p>
+            <button id="register-button">Зарегистрироваться</button>
+        </div>
+
+        <p id="message"></p>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body>
+</html>
