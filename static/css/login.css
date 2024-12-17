@@ -8,12 +8,38 @@ body {
     margin: 0;
 }
 
+/* Стили заголовка */
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 20px; /* Добавляем отступы сверху/снизу и справа/слева */
+    display: flex; /* Используем Flexbox для выравнивания */
+    justify-content: space-between; /* Размещаем элементы по краям */
+    align-items: center; /* Центрируем элементы по вертикали */
+    position: absolute; /* Фиксируем заголовок в верхней части страницы */
+    width: calc(100% - 40px); /* Уменьшаем ширину заголовка на 40px для отступов */
+    top: 0; /* Позиционируем заголовок вверху */
+    z-index: 1000; /* Устанавливаем высокий z-index, чтобы заголовок был поверх других элементов */
+}
+
+header a {
+    color: white; /* Белый цвет текста для ссылок */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px; /* Добавляем отступы для кликабельной области */
+}
+
+header a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
 .login-container {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px; /* Размер контейнера */
+    margin-top: 80px; /* Добавляем отступ сверху, чтобы контейнер не перекрывался заголовком */
 }
 
 h2 {

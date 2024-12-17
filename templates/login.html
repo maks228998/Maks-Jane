@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 </head>
 <body>
+    <header>
+        <a href="{{ url_for('comments') }}">Комментарии</a>
+        <a href="{{ url_for('profile') }}">Профиль</a>
+    </header>
+
     <div class="login-container">
         <h2>Авторизация</h2>
         <form id="login-form">

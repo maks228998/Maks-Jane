@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лента комментариев</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/comments.css') }}">
+</head>
+<body>
+    <h2>Лента комментариев</h2>
+    <form method="POST" action="/comments">
+        <input type="text" id="new-comment" name="new-comment" required>
+        <button type="submit">Добавить комментарий</button>
+    </form>
+    <div id="comments-section">
+        <h3>Комментарии:</h3>
+        <ul>
+            {% if comments %}
+                {% for comment in comments %}
+                    <li class="comment">
+                        <strong>{{ comment.username }}</strong> оставил комментарий:
+                        <em>{{ comment.comments_date }} {{ comment.comments_time }}</em>
+                        <p>{{ comment.comments_text }}</p>
+                    </li>
+                {% endfor %}
+            {% else %}
+                <li>Нет комментариев.</li>
+            {% endif %}
+        </ul>
+    </div>
+</body>
+</html>

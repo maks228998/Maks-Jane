@@ -1,40 +1,55 @@
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('login-form').addEventListener('submit', function (e) {
-        e.preventDefault();
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('login-form');
+    const message = document.getElementById('message');
 
-        const login = document.getElementById('login').value;
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Предотвращаем стандартную отправку формы
+
         const password = document.getElementById('password').value;
+        const password2 = document.getElementById('password2').value;
 
-        const data = {
-            "login": login,
-            "password": password
-        };
+        if (!password || !password2) {
+            message.textContent = 'Пароль отсутствует. Пожалуйста, введите пароль.';
+            message.style.color = 'red';
+            return;
+        }
 
-        fetch('http://127.0.0.1:5000/delete_profile', {
+        const formData = new FormData(form);
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+
+        fetch(form.action, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(data),
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                return response.json().then(error => {
+                    throw new Error(error.error);
+                });
+            }
+            return response.json();
+        })
         .then(data => {
-            if (data.redirect) {
-                window.location.href = data.redirect;
-            } else if (data.error) {
-                alert(data.error);
+            if (data.error) {
+                message.textContent = data.error;
+                message.style.color = 'red';
+            } else {
+                message.textContent = 'Аккаунт успешно удален!';
+                message.style.color = 'green';
+                // Перенаправление на страницу логина
+                window.location.href = '/login';
             }
         })
         .catch(error => {
-            alert('Error:', error);
-            console.error('Error:', error);
+            console.error('Ошибка:', error);
+            message.textContent = error.message || 'Произошла ошибка при отправке запроса.';
+            message.style.color = 'red';
         });
     });
-
-    const registerButton = document.getElementById('register-button');
-    if (registerButton) {
-        registerButton.addEventListener('click', function () {
-            window.location.href = 'http://127.0.0.1:5000/register'; // Укажите правильный маршрут
-        });
-    }
 });
